@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout   xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/food_image"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/food_test"
+
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/food_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/campaign_food_title"
+            android:textColor="@color/color_2"
+            app:layout_constraintStart_toEndOf="@+id/food_image"
+            app:layout_constraintTop_toTopOf="@+id/food_image"
+            android:layout_marginStart="@dimen/basic_margin"/>
+
+        <TextView
+            android:id="@+id/foodType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/campaign_food_type"
+            android:textSize="@dimen/tiny_description"
+
+            app:layout_constraintStart_toStartOf="@+id/food_title"
+            app:layout_constraintTop_toBottomOf="@+id/food_title" />
+
+        <TextView
+            android:id="@+id/SKU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/tiny_spacing"
+            android:text="@string/campaign_sku"
+            android:textSize="@dimen/tiny_description"
+
+            app:layout_constraintBaseline_toBaselineOf="@+id/skuQuantity"
+
+            app:layout_constraintStart_toEndOf="@+id/skuQuantity" />
+
+        <TextView
+            android:id="@+id/sku_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sku_label"
+            android:textColor="@color/color_1"
+            android:textSize="@dimen/small_label"
+            app:layout_constraintStart_toStartOf="@+id/foodType"
+            app:layout_constraintTop_toBottomOf="@+id/foodType" />
+
+        <TextView
+            android:id="@+id/quantity_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/basic_margin"
+            android:text="@string/quantity_label"
+            android:textColor="@color/color_1"
+            android:textSize="@dimen/small_label"
+            app:layout_constraintBaseline_toBaselineOf="@+id/sku_label"
+            app:layout_constraintStart_toEndOf="@+id/SKU" />
+
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/food_quantity"
+
+
+            app:layout_constraintStart_toStartOf="@+id/quantity_label"
+            app:layout_constraintTop_toBottomOf="@+id/quantity_label" />
+
+        <TextView
+            android:id="@+id/unit_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/tiny_spacing"
+
+            android:text="@string/unit_label"
+            android:textSize="@dimen/tiny_description"
+
+            app:layout_constraintBaseline_toBaselineOf="@+id/quantity"
+            app:layout_constraintStart_toEndOf="@+id/quantity" />
+
+        <TextView
+            android:id="@+id/skuQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/food_measurement"
+
+            app:layout_constraintStart_toStartOf="@+id/sku_label"
+            app:layout_constraintTop_toBottomOf="@+id/sku_label" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintBottom_toBottomOf="@+id/food_image"
+            app:layout_constraintStart_toStartOf="@+id/food_title"
+            app:layout_constraintTop_toBottomOf="@+id/skuQuantity" />
+
+        <TextView
+            android:id="@+id/demandQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/basic_margin"
+            android:text="@string/progress_quantity"
+
+            android:textSize="@dimen/small_label"
+            app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+            app:layout_constraintStart_toEndOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+        <TextView
+            android:id="@+id/progress_unit_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/tiny_spacing"
+            android:text="@string/unit_label"
+            android:textSize="@dimen/tiny_description"
+            app:layout_constraintBaseline_toBaselineOf="@+id/demandQuantity"
+            app:layout_constraintStart_toEndOf="@+id/demandQuantity" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.fragment.app.FragmentContainerView
+
+                android:id="@+id/campaign_fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <fragment
+                    android:id="@+id/fragmentContainerView"
+                    android:name="com.example.testapplication.campaign_information"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:layout_editor_absoluteX="226dp"
+                    tools:layout_editor_absoluteY="208dp" />
+            </androidx.fragment.app.FragmentContainerView>
+
+            <!--            <androidx.fragment.app.FragmentContainerView-->
+            <!--                android:id="@+id/fragmentContainerVFood"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content" >-->
+            <!--                <fragment android:name="com.example.foodbank.campaign_food_progress"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    />-->
+            <!--            </androidx.fragment.app.FragmentContainerView>-->
+
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/donor_campaign_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_spacing_margin"
+
+
+            android:fontFamily="@font/roboto_black"
+            android:paddingTop="@dimen/basic_margin"
+            android:paddingBottom="@dimen/basic_margin"
+            android:text="BOOK NOW"
+            android:textSize="@dimen/title_size"
+
+            app:backgroundTint="@color/color_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
