@@ -12,7 +12,9 @@ class PostsAdapter(val posts: ArrayList<String>): RecyclerView.Adapter<PostsAdap
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.firstName.text = "Justin Bieber"
+        val item = posts[position]
+        holder.campaign_title.text = item.toString()
+//        holder.campaign_title.text = "Justin Bieber"
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostsAdapter.ViewHolder {
@@ -20,6 +22,6 @@ class PostsAdapter(val posts: ArrayList<String>): RecyclerView.Adapter<PostsAdap
         return  ViewHolder(view)
     }
     class  ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-            val firstName : TextView = itemView.findViewById(R.id.firstName)
+            val campaign_title : TextView = itemView.findViewById(R.id.campaign_title)
     }
 }

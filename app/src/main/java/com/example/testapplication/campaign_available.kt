@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.testapplication.databinding.ActivityCampaignDetailBinding
 import com.example.testapplication.databinding.FragmentCampaignAvailableBinding
 import android.content.Intent
+import androidx.recyclerview.widget.RecyclerView
+
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -23,15 +25,13 @@ class campaign_available : Fragment() {
     // TODO: Rename and change types of parameters
 
     lateinit var binding: FragmentCampaignAvailableBinding
-    private var param1: String? = null
-    private var param2: String? = null
+    private var itemsList = ArrayList<String>()
+    private lateinit var customAdapter: PostsAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -47,17 +47,36 @@ class campaign_available : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val posts: ArrayList<String> = ArrayList()
-        for(i in 1..100){
-            posts.add("POST # $i")
-        }
-
 //        binding.campaignAvailableRecyclerView.layoutManager = LinearLayoutManager(context)
 //        binding.campaignAvailableRecyclerView.setHasFixedSize(true)
 //
 //        binding.campaignAvailableRecyclerView.adapter = PostsAdapter(posts)
+//
+//        for(i in 1..100){
+//            posts.add("POST # $i")
+
+
+        prepareItems()
+        val recyclerView: RecyclerView = view.findViewById(R.id.campaign_available_RecyclerView)
+        customAdapter = PostsAdapter(itemsList)
+        val layoutManager = LinearLayoutManager(context)
+
+        recyclerView?.layoutManager = LinearLayoutManager(
+            context,
+            LinearLayoutManager.HORIZONTAL, false)
+
+        recyclerView.adapter = customAdapter
+
+
+
 
     }
+    private fun prepareItems() {
+        for(i in 1..100) {
+            itemsList.add("POST # $i")
+        }
 
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

@@ -6,7 +6,8 @@
     tools:context=".campaign_food_progress">
 
 
-    <ListView
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/food_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
